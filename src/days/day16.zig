@@ -173,7 +173,6 @@ const BitReader = struct {
     }
 
     fn int(self: *Self, comptime T: type) T {
-        self._ensureReady();
         var _bits: usize = @bitSizeOf(T);
         var result: T = 0;
         while (_bits != 0) : (_bits -= 1) {
